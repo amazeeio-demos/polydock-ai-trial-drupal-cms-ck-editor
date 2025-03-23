@@ -14,8 +14,8 @@ tar --exclude=files/config_* \
 	--exclude=files/css \
 	--exclude=files/php \
 	--exclude=files/.polydock* \
-	--exclude=files/polydock/app-data-image.tgz 
-	-zcvf files/polydock/app-data-image.tgz 
+	--exclude=files/polydock/app-data-image.tgz \
+	-zcvf files/polydock/app-data-image.tgz \
 	files
 
 cd /app	
