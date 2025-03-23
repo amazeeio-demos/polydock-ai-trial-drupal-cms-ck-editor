@@ -1,17 +1,1 @@
 docker-compose-yaml: docker-compose.yml
-
-tasks:
-  post-rollout:
-    - run:
-        name: set up drupal-cms
-        command: if ! [[ $(drush status --field=Database) == "Connected" ]]; then /app/.lagoon/scripts/trial_install_configure.sh; fi
-        service: cli
-    - run:
-        name: drush updb
-        command: drush -y updb
-        service: cli
-    - run:
-        name: drush cr
-        command: drush -y cr
-        service: cli
-
