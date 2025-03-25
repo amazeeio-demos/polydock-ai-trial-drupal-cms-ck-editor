@@ -43,6 +43,10 @@ if [ ! -f "$LOCKFILE" ]; then
     drush config:set key.key.amazeeio_ai key_provider_settings.key_value $AI_LLM_API_TOKEN -y
   fi;
 
+  if [ ! -z "$AI_LLM_API_URL" ]; then
+    drush config:set ai_provider_amazeeio.settings host $AI_LLM_API_URL -y
+  fi;
+
   if [ ! -z "$POLYDOCK_GENERATED_APP_ADMIN_USERNAME" ]; then
     echo "Updating admin username to $POLYDOCK_GENERATED_APP_ADMIN_USERNAME"
     echo "update users_field_data set name='$POLYDOCK_GENERATED_APP_ADMIN_USERNAME' where name='admin'" | drush sql-cli
