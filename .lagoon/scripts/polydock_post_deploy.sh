@@ -44,6 +44,7 @@ if [ ! -f "$LOCKFILE" ]; then
   fi;
 
   if [ ! -z "$AI_LLM_API_URL" ]; then
+    echo "Importing amazee Private AI LLM URL"
     drush config:set ai_provider_amazeeio.settings host $AI_LLM_API_URL -y
   fi;
 
